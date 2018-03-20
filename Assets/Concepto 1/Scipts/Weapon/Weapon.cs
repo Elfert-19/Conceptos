@@ -6,21 +6,15 @@ public class Weapon : MonoBehaviour {
     public GameObject bullet;
     public AudioClip reloadSound;
     AudioSource aSource;
-    [SerializeField]
-    int totalAmmo;
-    int currentAmmo;
-    [SerializeField]
-    int magazine;
-    int currentMagazine;
-    [SerializeField]
-    float cadence;
-    [SerializeField]
-    Transform shotPoint;
-    [SerializeField]
-    Transform firePoint;
-    [SerializeField]
-    float reloadSpeed;
-    Shooter shooter;
+    public int totalAmmo;
+    public int currentAmmo;
+    public int magazine;
+    public int currentMagazine;
+    public float cadence;
+    public Transform firePoint;
+    public float reloadSpeed;
+    public Shooter shooter;
+    public GameObject shotEffect;
 
     protected void Awake()
     {
@@ -29,11 +23,10 @@ public class Weapon : MonoBehaviour {
     }
 
     // Funcion encargada de instanciar una municion en punto de disparo
-    public virtual void FireBullet()
+    public virtual void FireBullet(Vector3 hitPoint)
     {
         GameObject shot = Instantiate(bullet);
-        shot.transform.position = shotPoint.position;
-        shot.transform.rotation = shotPoint.rotation;
+        shot.transform.position = hitPoint;
     }
 
     // Funcion encargada de recargar e inpedir que se pueda disparar mientras se recargar y que la recarga no sea instantanea
