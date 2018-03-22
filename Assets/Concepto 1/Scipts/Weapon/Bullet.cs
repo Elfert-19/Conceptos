@@ -6,7 +6,7 @@ public class Bullet : MonoBehaviour {
     public float speed;
     public float damage;
     Armor armor;
-    GameObject bulletEfect;
+    public GameObject bulletEfect;
 
     public virtual void OnTriggerEnter(Collider hit)
     {
@@ -14,17 +14,19 @@ public class Bullet : MonoBehaviour {
         if(hit.GetComponent<Armor>() != null)
         {
             armor = hit.GetComponent<Armor>();
+            armor.ApplyArmor(damage);
+            Instantiate(bulletEfect, gameObject.transform.position, gameObject.transform.rotation);
             Destroy(gameObject);
         }
-        GameObject effect = Instantiate(bulletEfect,gameObject.transform.position,gameObject.transform.rotation);
+        Instantiate(bulletEfect,gameObject.transform.position,gameObject.transform.rotation);
         Destroy(gameObject);
     }
-
+    // Movimiento de la bala
     public virtual void BulletFly()
     {
         transform.Translate(0, 0, speed * Time.deltaTime);
     }
-
+    // Aplica alguna particularidad del disparo;
     public virtual void SpecialEffect()
     {
 
