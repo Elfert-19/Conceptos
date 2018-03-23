@@ -27,13 +27,19 @@ public class MovimientoPlayer : MonoBehaviour {
     private void Update()
     {
         HeadMovement();
-        if (groundMode)
+        if (groundMode == true)
         {
             PlayerGravity(gravityForce);
             GroundMovement();
-        }      
+        }
+        if(groundMode == false)
+        {
+            PlayerGravity(gravityForce);
+            AirMovement();
+        }     
     }
 
+    // Movimiento de la camara del jugador
     void HeadMovement()
     {
         float rotX = Input.GetAxis("Mouse X") * camerdaSpeed * Time.deltaTime;
@@ -45,6 +51,7 @@ public class MovimientoPlayer : MonoBehaviour {
         cameraPlayer.transform.localEulerAngles = new Vector3(cameraAngle, 0, 0);
     }
 
+    // Se encarga del movimiento en tierra del jugador
     void GroundMovement()
     {
         Vector3 movement = new Vector3(0,-currentGravity, 0);
@@ -80,8 +87,37 @@ public class MovimientoPlayer : MonoBehaviour {
         }
     }
 
+    // Se encarga de la gravedad que aplica sobre el pesonaje
     public void PlayerGravity(float gravity)
     {
         currentGravity += gravity * Time.deltaTime;
+    }
+
+    // Se encarga del movimiento en el aire
+    public void AirMovement()
+    {
+        Vector3 movement = new Vector3(0, -currentGravity, 0);
+        if (Input.GetKey(KeyCode.W))
+        {
+            currentGravity = 0;
+            movement += cameraPlayer.transform.forward * speed;
+        }
+        if (Input.GetKey(KeyCode.S))
+        {
+            currentGravity = 0;
+            movement += -cameraPlayer.transform.forward * speed;
+        }
+        if (Input.GetKey(KeyCode.D))
+        {
+            currentGravity = 0;
+            movement += cameraPlayer.transform.right * speed;
+        }
+        if (Input.GetKey(KeyCode.A))
+        {
+            currentGravity = 0;
+            movement += -cameraPlayer.transform.right * speed;
+        }
+
+        charC.Move(movement * Time.deltaTime);
     }
 }

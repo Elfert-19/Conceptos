@@ -8,6 +8,12 @@ public class Life : MonoBehaviour {
     public bool autoHeal;
     public float autoHealAmount;
     public float autoHealInterval;
+    [SerializeField]
+    bool isPrincipalLife;
+    List<GameObject> onDeadGoOff;
+    public bool parcialDead = false;
+    List<GameObject> onParcialDeadGoOff;
+
 
     private void Awake()
     {
@@ -15,6 +21,7 @@ public class Life : MonoBehaviour {
         {
             InvokeRepeating("AutoHeal", autoHealInterval, autoHealInterval);
         }
+
     }
 
     // Se le pasa un daño y se lo resta a la vida, luego llama a la funcion de control
@@ -29,7 +36,14 @@ public class Life : MonoBehaviour {
     {
         if (currentHp < 0)
         {
-            Dead();
+            if (isPrincipalLife)
+            {
+                Dead();
+            }
+            else
+            {
+                ParcialDead();
+            }
         }
         if(currentHp > totalHp)
         {
@@ -42,10 +56,13 @@ public class Life : MonoBehaviour {
         currentHp += heal;
         Status();
     }
-    // Controla lo que pasa cuando la vida llega a 0
+    // Controla lo que pasa cuando la vida llega a 0 y es vida principal
     public void Dead()
     {
-
+        for (int i = 0; i < onDeadGoOff.Count; i++)
+        {
+            onDeadGoOff[i].SetActive(false);
+        }
     }
     // Controla que el la auto curacion siga estando activa y aplica una curacion
     public void AutoHeal()
@@ -60,6 +77,28 @@ public class Life : MonoBehaviour {
             Heal(autoHealAmount);
             Status();
             CancelInvoke();
+        }
+    }
+    // Controla cuando la vida llega a 0 y no es la vida princiapl
+    public void ParcialDead()
+    {
+        parcialDead = true;
+        for (int i = 0; i < onParcialDeadGoOff.Count; i++)
+        {
+            onParcialDeadGoOff[i].SetActive(false);
+        }
+    }
+    // Vuelve a llenar la vida si no es el cuerpo principal y reactiva las funciones del mismo
+    public void Revive()
+    {
+        if (isPrincipalLife == false & parcialDead == true)
+        {
+            parcialDead = false;
+            Heal(totalHp);
+            for (int i = 0; i < onParcialDeadGoOff.Count; i++)
+            {
+                onParcialDeadGoOff[i].SetActive(true);
+            }
         }
     }
 }
