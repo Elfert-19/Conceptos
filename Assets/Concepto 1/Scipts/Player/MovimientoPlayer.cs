@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MonoBehaviour : UnityEngine.MonoBehaviour {
+public class MovimientoPlayer : UnityEngine.MonoBehaviour {
+
     CharacterController charC;
     [SerializeField]
     float speed;

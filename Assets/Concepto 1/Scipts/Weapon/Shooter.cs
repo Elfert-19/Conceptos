@@ -6,15 +6,18 @@ public class Shooter : UnityEngine.MonoBehaviour {
     Weapon activeWapon;
     public Weapon[] availableWeapons;
     public Transform weaponAnchor;
+    Camera playerCamera;
 
     private void Start()
     {
+        playerCamera = GetComponentInChildren<Camera>();
         for (int i = 0; i < availableWeapons.Length; i++)
         {
             availableWeapons[i].gameObject.SetActive(false);
         }
         activeWapon = availableWeapons[0];
         activeWapon.gameObject.SetActive(true);
+        activeWapon.playerCamera = playerCamera;
     }
 
     private void Update()
@@ -56,6 +59,7 @@ public class Shooter : UnityEngine.MonoBehaviour {
                 activeWapon.gameObject.SetActive(false);
                 activeWapon = availableWeapons[0];
                 activeWapon.gameObject.SetActive(true);
+                activeWapon.playerCamera = playerCamera;
             }
         }
 
@@ -66,6 +70,7 @@ public class Shooter : UnityEngine.MonoBehaviour {
                 activeWapon.gameObject.SetActive(false);
                 activeWapon = availableWeapons[1];
                 activeWapon.gameObject.SetActive(true);
+                activeWapon.playerCamera = playerCamera;
             }
         }
         
@@ -76,6 +81,7 @@ public class Shooter : UnityEngine.MonoBehaviour {
                 activeWapon.gameObject.SetActive(false);
                 activeWapon = availableWeapons[2];
                 activeWapon.gameObject.SetActive(true);
+                activeWapon.playerCamera = playerCamera;
             }
         }
     }

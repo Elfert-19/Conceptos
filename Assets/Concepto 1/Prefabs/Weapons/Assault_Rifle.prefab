@@ -228,8 +228,8 @@ MonoBehaviour:
   reloadSpeed: 0.5
   shooter: {fileID: 0}
   shotEffect: {fileID: 100006, guid: c888f0c922d622147bbdbe2ca794142b, type: 2}
-  maxDistance: 100
   playerCamera: {fileID: 0}
+  maxDistance: 100
   layer:
     serializedVersion: 2
     m_Bits: 7936

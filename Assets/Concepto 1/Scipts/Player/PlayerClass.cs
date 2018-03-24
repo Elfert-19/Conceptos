@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerClass : MonoBehaviour {
+public class PlayerClass : MovimientoPlayer {
     Life life;
     Armor armor;
     Weapon[] classWeapons;
@@ -40,7 +40,7 @@ public class PlayerClass : MonoBehaviour {
     {
         SkillFire();
     }
-
+    // Dispara las abilidades de la clase
     public void SkillFire()
     {
         if (Input.GetKeyDown(KeyCode.Q))

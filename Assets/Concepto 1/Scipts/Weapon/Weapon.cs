@@ -15,6 +15,7 @@ public class Weapon : UnityEngine.MonoBehaviour {
     public float reloadSpeed;
     public Shooter shooter;
     public GameObject shotEffect;
+    public Camera playerCamera;
 
     protected void Awake()
     {

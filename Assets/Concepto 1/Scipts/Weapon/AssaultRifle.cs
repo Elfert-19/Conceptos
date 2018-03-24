@@ -7,8 +7,6 @@ public class AssaultRifle : Weapon {
     [SerializeField]
     float maxDistance;
     [SerializeField]
-    Camera playerCamera;
-    [SerializeField]
     LayerMask layer;
     float shootTime;
 
