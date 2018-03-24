@@ -11,7 +11,7 @@ using System.Collections;
 **/
 
 [RequireComponent(typeof(MeshFilter))]
-public class WFX_BulletHoleDecal : MonoBehaviour
+public class WFX_BulletHoleDecal : UnityEngine.MonoBehaviour
 {
 	static private Vector2[] quadUVs = new Vector2[]{new Vector2(0,0), new Vector2(0,1), new Vector2(1,0), new Vector2(1,1)};
 	

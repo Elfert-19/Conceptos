@@ -1,7 +1,7 @@
 using UnityEngine;
 using System.Collections;
 
-public class WFX_Demo_RandomDir : MonoBehaviour
+public class WFX_Demo_RandomDir : UnityEngine.MonoBehaviour
 {
 	public Vector3 min = new Vector3(0,0,0);
 	public Vector3 max = new Vector3(0,360,0);

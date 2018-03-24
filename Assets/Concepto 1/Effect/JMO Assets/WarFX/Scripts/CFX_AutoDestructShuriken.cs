@@ -2,7 +2,7 @@ using UnityEngine;
 using System.Collections;
 
 [RequireComponent(typeof(ParticleSystem))]
-public class CFX_AutoDestructShuriken : MonoBehaviour
+public class CFX_AutoDestructShuriken : UnityEngine.MonoBehaviour
 {
 	public bool OnlyDeactivate;
 	

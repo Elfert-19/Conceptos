@@ -2,12 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Shooter : MonoBehaviour {
+public class Shooter : UnityEngine.MonoBehaviour {
     Weapon activeWapon;
     public Weapon[] availableWeapons;
     public Transform weaponAnchor;
 
-    private void Awake()
+    private void Start()
     {
         for (int i = 0; i < availableWeapons.Length; i++)
         {

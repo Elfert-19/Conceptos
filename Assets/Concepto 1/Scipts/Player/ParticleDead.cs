@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ParticleDead : MonoBehaviour {
+public class ParticleDead : UnityEngine.MonoBehaviour {
     public bool isMuzzle;
     public float duration;
 
@@ -10,7 +10,7 @@ public class ParticleDead : MonoBehaviour {
     {
         ParticcleLife();    
     }
-
+    // Controla la destruccion de los efectos
     public void ParticcleLife()
     {
         if (isMuzzle)
@@ -25,7 +25,7 @@ public class ParticleDead : MonoBehaviour {
             Invoke("Kill", duration);
         }
     }
-
+    // Destruye el efecto
     public void Kill()
     {
         Destroy(gameObject);

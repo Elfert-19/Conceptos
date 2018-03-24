@@ -8,7 +8,7 @@ using System.Text.RegularExpressions;
 //
 // Script handling the Demo scene of the Cartoon FX Packs
 
-public class WFX_Demo_New : MonoBehaviour
+public class WFX_Demo_New : UnityEngine.MonoBehaviour
 {
 	public Renderer groundRenderer;
 	public Collider groundCollider;

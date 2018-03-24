@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Armor : MonoBehaviour {
+public class Armor : UnityEngine.MonoBehaviour {
     public float baseArmor;
     public float totalArmor;
     Life hp;

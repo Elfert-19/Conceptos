@@ -9,7 +9,7 @@ using System.Text.RegularExpressions;
  *	(c) 2015, Jean Moreno
 **/
 
-public class WFX_Demo : MonoBehaviour
+public class WFX_Demo : UnityEngine.MonoBehaviour
 {
 	public float cameraSpeed = 10f;
 	

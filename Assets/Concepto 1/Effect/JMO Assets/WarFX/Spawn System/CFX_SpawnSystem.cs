@@ -8,7 +8,7 @@ using System.Collections.Generic;
 // Preload GameObject to reuse them later, avoiding to Instantiate them.
 // Very useful for mobile platforms.
 
-public class CFX_SpawnSystem : MonoBehaviour
+public class CFX_SpawnSystem : UnityEngine.MonoBehaviour
 {
 	/// <summary>
 	/// Get the next available preloaded Object.

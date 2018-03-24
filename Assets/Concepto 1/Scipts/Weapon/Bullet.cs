@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Bullet : MonoBehaviour {
+public class Bullet : UnityEngine.MonoBehaviour {
     public float speed;
     public float damage;
     Armor armor;
@@ -10,7 +10,7 @@ public class Bullet : MonoBehaviour {
     public bool powerUpON;
     public bool specialEffectOn;
 
-    public void ApplyDamage(Collider hit)
+    public virtual void ApplyDamage(Collider hit)
     {
         if (hit.GetComponent<Armor>() != null)
         {
@@ -32,7 +32,7 @@ public class Bullet : MonoBehaviour {
     {
 
     }
-
+    // Aplica algun efecto momentaneo de las blas
     public virtual void PowerUp()
     {
 

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Weapon : MonoBehaviour {
+public class Weapon : UnityEngine.MonoBehaviour {
     public GameObject bullet;
     public AudioClip reloadSound;
     AudioSource aSource;

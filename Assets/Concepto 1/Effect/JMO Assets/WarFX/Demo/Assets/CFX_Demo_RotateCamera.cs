@@ -1,7 +1,7 @@
 using UnityEngine;
 using System.Collections;
 
-public class CFX_Demo_RotateCamera : MonoBehaviour
+public class CFX_Demo_RotateCamera : UnityEngine.MonoBehaviour
 {
 	static public bool rotating = true;
 	

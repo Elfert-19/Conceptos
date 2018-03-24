@@ -8,7 +8,7 @@ using System.Text.RegularExpressions;
 // Script handling looped effect in the Demo Scene, so that they eventually stop
 
 [RequireComponent(typeof(ParticleSystem))]
-public class CFX_AutoStopLoopedEffect : MonoBehaviour
+public class CFX_AutoStopLoopedEffect : UnityEngine.MonoBehaviour
 {
 	public float effectDuration = 2.5f;
 	private float d;

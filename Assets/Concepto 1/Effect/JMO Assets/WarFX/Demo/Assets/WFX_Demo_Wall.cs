@@ -9,7 +9,7 @@ using System.Text.RegularExpressions;
  *	(c) 2015, Jean Moreno
 **/
 
-public class WFX_Demo_Wall : MonoBehaviour
+public class WFX_Demo_Wall : UnityEngine.MonoBehaviour
 {
 	public WFX_Demo_New demo;
 	

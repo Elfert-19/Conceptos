@@ -8,7 +8,7 @@ using System.Collections;
 **/
 
 [RequireComponent(typeof(Light))]
-public class WFX_LightFlicker : MonoBehaviour
+public class WFX_LightFlicker : UnityEngine.MonoBehaviour
 {
 	public float time = 0.05f;
 	

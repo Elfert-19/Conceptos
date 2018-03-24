@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Life : MonoBehaviour {
+public class Life : UnityEngine.MonoBehaviour {
     public float totalHp;
     public float currentHp;
     public bool autoHeal;
@@ -15,7 +15,7 @@ public class Life : MonoBehaviour {
     List<GameObject> onParcialDeadGoOff;
 
 
-    private void Awake()
+    private void Start()
     {
         if(autoHeal == true)
         {

@@ -1,7 +1,7 @@
 using UnityEngine;
 using System.Collections;
 
-public class WFX_Demo_DeleteAfterDelay : MonoBehaviour
+public class WFX_Demo_DeleteAfterDelay : UnityEngine.MonoBehaviour
 {
 	public float delay = 1.0f;
 	
