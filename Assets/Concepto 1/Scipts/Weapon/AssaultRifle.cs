@@ -23,12 +23,16 @@ public class AssaultRifle : Weapon {
             if(Physics.Raycast(firePoint.position,inpactPoint, out hitInfo, maxDistance, layer))
             {
                Vector3 shotPoint = hitInfo.point;
-                RapidFire(shotPoint);
+                RapidFire(shotPoint, hitInfo);
             }
         }
     }
+    public override void FireBullet(Vector3 hitPoint)
+    {
+        base.FireBullet(hitPoint);
+    }
     // Se encarga de disparar de manera continua y controlar la cadencia de fuego
-    public void RapidFire(Vector3 position)
+    public void RapidFire(Vector3 position, RaycastHit hit)
     {
         float timeBetweenBullets = cadence / magazine;
         if(currentMagazine > 0)
@@ -38,7 +42,7 @@ public class AssaultRifle : Weapon {
                 shootTime = Time.time;
                 currentMagazine--;
                 FireBullet(position);
-                Instantiate(shotEffect, firePoint.position, firePoint.rotation);
+                Instantiate(shotEffect, firePoint.position, firePoint.rotation, firePoint);
             }
         }
     }

@@ -9,7 +9,6 @@ public class Shooter : MonoBehaviour {
 
     private void Awake()
     {
-        availableWeapons = new Weapon[3];
         for (int i = 0; i < availableWeapons.Length; i++)
         {
             availableWeapons[i].gameObject.SetActive(false);
@@ -21,6 +20,7 @@ public class Shooter : MonoBehaviour {
     private void Update()
     {
         Shoot();
+        Reload();
         WeaponChager();
     }
 
@@ -94,6 +94,14 @@ public class Shooter : MonoBehaviour {
         if (Input.GetKeyDown(KeyCode.Alpha3))
         {
             SwitchWeapon(3);
+        }
+    }
+
+    public void Reload()
+    {
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            activeWapon.Reload();
         }
     }
 }

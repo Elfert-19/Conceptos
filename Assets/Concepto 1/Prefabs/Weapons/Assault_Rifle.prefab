@@ -45,15 +45,15 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4379902380889608
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1816679868299430}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.769, z: 0.927}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0.34}
   m_LocalScale: {x: 0.17277521, y: 0.14089245, z: 0.5758353}
   m_Children:
   - {fileID: 4687097337723368}
@@ -219,16 +219,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bullet: {fileID: 0}
   reloadSound: {fileID: 0}
-  totalAmmo: 0
-  currentAmmo: 0
-  magazine: 0
-  currentMagazine: 0
-  cadence: 0
+  totalAmmo: 100
+  currentAmmo: 100
+  magazine: 30
+  currentMagazine: 30
+  cadence: 2
   firePoint: {fileID: 4687097337723368}
-  reloadSpeed: 0
+  reloadSpeed: 0.5
   shooter: {fileID: 0}
   shotEffect: {fileID: 0}
-  maxDistance: 0
+  maxDistance: 100
   playerCamera: {fileID: 0}
   layer:
     serializedVersion: 2
