@@ -9,20 +9,28 @@ public class AssaultRifle : Weapon {
     [SerializeField]
     LayerMask layer;
     float shootTime;
+    bool hitMiss = true;
 
     // Disparo primario del Assault Rifle
     public override void PrimaryFire()
     {
+        Vector3 miss = new Vector3(0, -200, 0);
+        hitMiss = true;
         RaycastHit hitInfo;
-        if(Physics.Raycast(playerCamera.transform.position, playerCamera.transform.forward, out hitInfo, maxDistance, layer))
+        if (Physics.Raycast(playerCamera.transform.position, playerCamera.transform.forward, out hitInfo, maxDistance, layer))
         {
             Vector3 inpactPoint = Vector3.Normalize(hitInfo.point - firePoint.position);
 
-            if(Physics.Raycast(firePoint.position,inpactPoint, out hitInfo, maxDistance, layer))
+            if (Physics.Raycast(firePoint.position, inpactPoint, out hitInfo, maxDistance, layer))
             {
-               Vector3 shotPoint = hitInfo.point;
-                RapidFire(shotPoint, hitInfo);
+                Vector3 shotPoint = hitInfo.point;
+                RapidFire(shotPoint);
+                hitMiss = false;
             }
+        }
+        if (hitMiss)
+        {
+            RapidFire(miss);
         }
     }
     public override void FireBullet(Vector3 hitPoint)
@@ -30,12 +38,12 @@ public class AssaultRifle : Weapon {
         base.FireBullet(hitPoint);
     }
     // Se encarga de disparar de manera continua y controlar la cadencia de fuego
-    public void RapidFire(Vector3 position, RaycastHit hit)
+    public void RapidFire(Vector3 position)
     {
         float timeBetweenBullets = cadence / magazine;
-        if(currentMagazine > 0)
+        if (currentMagazine > 0)
         {
-            if(Time.time - shootTime > timeBetweenBullets)
+            if (Time.time - shootTime > timeBetweenBullets)
             {
                 shootTime = Time.time;
                 currentMagazine--;

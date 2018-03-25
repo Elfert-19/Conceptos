@@ -2,18 +2,17 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MovimientoPlayer : UnityEngine.MonoBehaviour {
+public class PlayerMovement : UnityEngine.MonoBehaviour {
 
     CharacterController charC;
-    [SerializeField]
-    float speed;
-    [SerializeField]
-    float jump;
+    public float speed;
+    public float jump;
     [SerializeField]
     float camerdaSpeed;
     [SerializeField]
     float cameraRotationY;
     public float gravityForce;
+    [SerializeField]
     float cameraAngle;
     Camera cameraPlayer;
     float currentGravity;

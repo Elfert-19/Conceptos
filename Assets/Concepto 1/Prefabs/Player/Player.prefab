@@ -104,11 +104,13 @@ GameObject:
   - component: {fileID: 33971462548006030}
   - component: {fileID: 23269771315948228}
   - component: {fileID: 143071107927886396}
+  - component: {fileID: 114836923232239048}
   - component: {fileID: 114663726743260882}
   - component: {fileID: 114649201281590590}
   - component: {fileID: 114999690864651192}
-  - component: {fileID: 114828377185623260}
-  - component: {fileID: 114196674624167774}
+  - component: {fileID: 114253454492286384}
+  - component: {fileID: 114020176109154284}
+  - component: {fileID: 114008487089179826}
   m_Layer: 8
   m_Name: Player
   m_TagString: Untagged
@@ -455,6 +457,41 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
+--- !u!114 &114008487089179826
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1758501519388170}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a01b41d258e6d94faf851895a04e9cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cooldown: 10
+  used: 0
+  timeSinceUse: 0
+  duration: 15
+  timesCanBeUsed: 0
+  timesUsed: 0
+--- !u!114 &114020176109154284
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1758501519388170}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf28f6de6d70280469fb765d71b070af, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cooldown: 10
+  used: 0
+  timeSinceUse: 0
+  duration: 10
+  timesCanBeUsed: -1
+  timesUsed: 0
+  speedBoost: 10
 --- !u!114 &114124167518276260
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -473,7 +510,7 @@ MonoBehaviour:
   m_InputActionsPerSecond: 10
   m_RepeatDelay: 0.5
   m_ForceModuleActive: 0
---- !u!114 &114196674624167774
+--- !u!114 &114253454492286384
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -481,19 +518,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1758501519388170}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: -1768714887, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
+  m_Script: {fileID: 11500000, guid: 0c0dd6d426462ab42acbc0aa2c0381c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_TransformSyncMode: 4
-  m_SendInterval: 0.1
-  m_SyncRotationAxis: 7
-  m_RotationSyncCompression: 0
-  m_SyncSpin: 0
-  m_MovementTheshold: 0.001
-  m_VelocityThreshold: 0.0001
-  m_SnapThreshold: 5
-  m_InterpolateRotation: 1
-  m_InterpolateMovement: 1
+  baseArmor: 0
+  totalArmor: 0
 --- !u!114 &114350653028190572
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -546,11 +575,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d2c966b7c390e46418d2e928c82f0a3a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 15
-  jump: 5
+  speed: 0
+  jump: 0
   camerdaSpeed: 50
   cameraRotationY: 80
   gravityForce: 20
+  cameraAngle: 0
   groundMode: 1
 --- !u!114 &114707695758701766
 MonoBehaviour:
@@ -630,7 +660,7 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
---- !u!114 &114828377185623260
+--- !u!114 &114836923232239048
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -638,30 +668,18 @@ MonoBehaviour:
   m_GameObject: {fileID: 1758501519388170}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 372142912, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
+  m_Script: {fileID: 11500000, guid: a157e723529e4ba418c89dbe8b5eebf0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_SceneId:
-    m_Value: 0
-  m_AssetId:
-    i0: 197
-    i1: 207
-    i2: 161
-    i3: 38
-    i4: 151
-    i5: 45
-    i6: 197
-    i7: 68
-    i8: 107
-    i9: 237
-    i10: 52
-    i11: 247
-    i12: 154
-    i13: 102
-    i14: 0
-    i15: 151
-  m_ServerOnly: 0
-  m_LocalPlayerAuthority: 0
+  classWeapons:
+  - {fileID: 114983907251982100, guid: 9e62efbebc9841040ba8787f415b23e0, type: 2}
+  hp: 100
+  classArmor: 20
+  speed: 20
+  jump: 20
+  skill:
+  - {fileID: 114020176109154284}
+  - {fileID: 114008487089179826}
 --- !u!114 &114999690864651192
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -673,7 +691,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f645fd4e63ee5541b6b6feea7d55ff3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  totalHp: 100
+  totalHp: 0
   currentHp: 10
   autoHeal: 1
   autoHealAmount: 5

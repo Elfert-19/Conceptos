@@ -21,6 +21,16 @@ public class Weapon : UnityEngine.MonoBehaviour {
     {
         aSource = GetComponent<AudioSource>();
         shooter = GetComponentInParent<Shooter>();
+        if(shooter.availableWeapons[0] == null)
+        {
+            shooter.availableWeapons[0] = this;
+        }else if (shooter.availableWeapons[1] == null)
+        {
+            shooter.availableWeapons[1] = this;
+        }else if (shooter.availableWeapons[2] == null)
+        {
+            shooter.availableWeapons[2] = this;
+        }
     }
 
     // Funcion encargada de instanciar una municion en punto de disparo

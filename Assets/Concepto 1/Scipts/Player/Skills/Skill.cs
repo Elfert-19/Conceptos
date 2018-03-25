@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class Skill : UnityEngine.MonoBehaviour {
     public float cooldown;
-    bool used;
-    float timeSinceUse;
+    public bool used;
+    public float timeSinceUse;
+    public float duration;
     public int timesCanBeUsed;
     public int timesUsed;
 
@@ -31,5 +32,10 @@ public class Skill : UnityEngine.MonoBehaviour {
                 used = false;
             }
         }
+    }
+
+    public virtual void SkillFinish()
+    {
+
     }
 }
