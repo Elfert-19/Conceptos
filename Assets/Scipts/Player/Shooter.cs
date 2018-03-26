@@ -11,9 +11,8 @@ public class Shooter : UnityEngine.MonoBehaviour {
     private void Start()
     {
         playerCamera = GetComponentInChildren<Camera>();
-        for (int i = 0; i < availableWeapons.Length; i++)
-        {
-            availableWeapons[i].gameObject.SetActive(false);
+        foreach(Weapon weapon in availableWeapons) { 
+            weapon.gameObject.SetActive(false);
         }
         activeWapon = availableWeapons[0];
         activeWapon.gameObject.SetActive(true);
@@ -102,7 +101,7 @@ public class Shooter : UnityEngine.MonoBehaviour {
             SwitchWeapon(3);
         }
     }
-
+    // Llama a la funcion recarga del arma
     public void Reload()
     {
         if (Input.GetKeyDown(KeyCode.R))

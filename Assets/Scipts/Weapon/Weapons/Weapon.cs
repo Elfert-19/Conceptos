@@ -38,6 +38,8 @@ public class Weapon : UnityEngine.MonoBehaviour {
     {
         GameObject shot = Instantiate(bullet);
         shot.transform.position = hitPoint;
+        Instantiate(shotEffect, firePoint.position, firePoint.rotation, firePoint);
+        currentMagazine--;
     }
 
     // Funcion encargada de recargar e inpedir que se pueda disparar mientras se recargar y que la recarga no sea instantanea

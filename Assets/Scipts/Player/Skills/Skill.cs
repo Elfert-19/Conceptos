@@ -33,7 +33,7 @@ public class Skill : UnityEngine.MonoBehaviour {
             }
         }
     }
-
+    // Lo que sucede cuando cuando la abilidad termina
     public virtual void SkillFinish()
     {
 

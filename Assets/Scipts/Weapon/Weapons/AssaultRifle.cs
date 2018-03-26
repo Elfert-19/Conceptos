@@ -33,10 +33,6 @@ public class AssaultRifle : Weapon {
             RapidFire(miss);
         }
     }
-    public override void FireBullet(Vector3 hitPoint)
-    {
-        base.FireBullet(hitPoint);
-    }
     // Se encarga de disparar de manera continua y controlar la cadencia de fuego
     public void RapidFire(Vector3 position)
     {
@@ -46,9 +42,7 @@ public class AssaultRifle : Weapon {
             if (Time.time - shootTime > timeBetweenBullets)
             {
                 shootTime = Time.time;
-                currentMagazine--;
                 FireBullet(position);
-                Instantiate(shotEffect, firePoint.position, firePoint.rotation, firePoint);
             }
         }
     }
