@@ -51,7 +51,14 @@ public class SniperRifle : Weapon {
                 shootTime = Time.time;
                 FireBullet(hitPoint);
                 rb.transform.Translate(0, 0, -recoil*Time.deltaTime);
+                rb.transform.Rotate(-recoil, 0, 0);
+                Invoke("ReturnPlayerPosition", 0.4f);
             }
         }
+    }
+
+    public void ReturnPlayerPosition()
+    {
+        rb.transform.Rotate(recoil,0,0);
     }
 }

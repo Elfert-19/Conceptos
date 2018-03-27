@@ -227,10 +227,10 @@ MonoBehaviour:
   firePoint: {fileID: 4890930274114068}
   reloadSpeed: 3
   shooter: {fileID: 0}
-  shotEffect: {fileID: 0}
+  shotEffect: {fileID: 100006, guid: c888f0c922d622147bbdbe2ca794142b, type: 2}
   playerCamera: {fileID: 0}
   maxDistance: 0
   layer:
     serializedVersion: 2
     m_Bits: 24320
-  recoil: 15
+  recoil: 30

@@ -9,5 +9,4 @@ public class AssaultRiffleBullet : Bullet {
         ApplyDamage(hit.collider);
     }
 
-
 }

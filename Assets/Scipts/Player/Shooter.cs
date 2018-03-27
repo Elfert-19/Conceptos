@@ -29,7 +29,16 @@ public class Shooter : UnityEngine.MonoBehaviour {
     // Controla el mouse y llama al disparo del arma
     public void Shoot()
     {
-        bool primaryFire = Input.GetKey(KeyCode.Mouse0);
+
+        bool primaryFire;
+        if (activeWapon.automatic)
+        {
+            primaryFire = Input.GetKey(KeyCode.Mouse0);
+        }
+        else
+        {
+            primaryFire = Input.GetKeyDown(KeyCode.Mouse0);
+        }
         bool secondaryFire = Input.GetKey(KeyCode.Mouse1);
         bool specialFire = Input.GetKeyDown(KeyCode.Mouse2);
 

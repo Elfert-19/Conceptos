@@ -5,6 +5,7 @@ using UnityEngine;
 public class ParticleDead : UnityEngine.MonoBehaviour {
     public bool isMuzzle;
     public float duration;
+    public bool automatic = false;
 
     private void Update()
     {
@@ -15,9 +16,16 @@ public class ParticleDead : UnityEngine.MonoBehaviour {
     {
         if (isMuzzle)
         {
-            if (Input.GetKeyUp(KeyCode.Mouse0))
+            if (automatic)
             {
-                Destroy(gameObject);
+                if (Input.GetKeyUp(KeyCode.Mouse0))
+                {
+                    Destroy(gameObject);
+                }
+            }
+            else
+            {
+                Invoke("Kill", 0.1f);
             }
         }
         else

@@ -16,6 +16,7 @@ public class Weapon : UnityEngine.MonoBehaviour {
     public Shooter shooter;
     public GameObject shotEffect;
     public Camera playerCamera;
+    public bool automatic;
 
     protected void Awake()
     {
@@ -38,7 +39,15 @@ public class Weapon : UnityEngine.MonoBehaviour {
     {
         GameObject shot = Instantiate(bullet);
         shot.transform.position = hitPoint;
-        Instantiate(shotEffect, firePoint.position, firePoint.rotation, firePoint);
+        if (automatic)
+        {
+            GameObject particle = Instantiate(shotEffect, firePoint.position, firePoint.rotation, firePoint);
+            particle.GetComponent<ParticleDead>().automatic = true;
+        }
+        else
+        {
+            Instantiate(shotEffect, firePoint.position, firePoint.rotation, firePoint);
+        }
         currentMagazine--;
     }
 

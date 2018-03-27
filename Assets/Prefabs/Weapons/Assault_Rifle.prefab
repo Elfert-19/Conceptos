@@ -222,7 +222,7 @@ MonoBehaviour:
   totalAmmo: 100
   currentAmmo: 100
   magazine: 30
-  currentMagazine: 30
+  currentMagazine: 27
   cadence: 2
   firePoint: {fileID: 4687097337723368}
   reloadSpeed: 0.5
