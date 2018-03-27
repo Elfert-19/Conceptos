@@ -7,7 +7,7 @@ public class Fly : Skill {
 
     private void Awake()
     {
-        pm = GetComponent<PlayerMovement>();
+        pm = GetComponentInParent<PlayerMovement>();
     }
 
     public override void UseSkill()

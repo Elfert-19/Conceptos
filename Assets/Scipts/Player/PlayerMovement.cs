@@ -7,12 +7,9 @@ public class PlayerMovement : UnityEngine.MonoBehaviour {
     CharacterController charC;
     public float speed;
     public float jump;
-    [SerializeField]
-    float camerdaSpeed;
-    [SerializeField]
-    float cameraRotationY;
+    public float camerdaSpeed;
+    public float cameraRotationY;
     public float gravityForce;
-    [SerializeField]
     float cameraAngle;
     Camera cameraPlayer;
     float currentGravity;

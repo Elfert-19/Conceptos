@@ -32,6 +32,8 @@ public class Weapon : UnityEngine.MonoBehaviour {
         {
             shooter.availableWeapons[2] = this;
         }
+        currentAmmo += totalAmmo;
+        currentMagazine += magazine;
     }
 
     // Funcion encargada de instanciar una municion en punto de disparo

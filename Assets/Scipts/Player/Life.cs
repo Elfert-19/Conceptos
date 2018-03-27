@@ -21,7 +21,7 @@ public class Life : UnityEngine.MonoBehaviour {
         {
             InvokeRepeating("AutoHeal", autoHealInterval, autoHealInterval);
         }
-
+        currentHp += totalHp;
     }
 
     // Se le pasa un daño y se lo resta a la vida, luego llama a la funcion de control
