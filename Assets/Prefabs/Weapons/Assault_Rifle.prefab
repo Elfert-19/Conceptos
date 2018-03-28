@@ -220,15 +220,16 @@ MonoBehaviour:
   bullet: {fileID: 1250927750447882, guid: 66c3c35005528f54fb4c7fc27f1d1f30, type: 2}
   reloadSound: {fileID: 0}
   totalAmmo: 100
-  currentAmmo: 100
+  currentAmmo: 0
   magazine: 30
-  currentMagazine: 27
+  currentMagazine: 0
   cadence: 2
   firePoint: {fileID: 4687097337723368}
   reloadSpeed: 0.5
   shooter: {fileID: 0}
   shotEffect: {fileID: 100006, guid: c888f0c922d622147bbdbe2ca794142b, type: 2}
   playerCamera: {fileID: 0}
+  automatic: 1
   maxDistance: 100
   layer:
     serializedVersion: 2

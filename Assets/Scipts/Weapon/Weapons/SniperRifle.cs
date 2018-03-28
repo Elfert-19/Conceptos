@@ -10,12 +10,17 @@ public class SniperRifle : Weapon {
     float shootTime;
     bool hitMiss = true;
     Rigidbody rb;
+    PlayerMovement pm;
     public float recoil;
+    Camera Scope;
 
 
     private void Start()
     {
         rb = GetComponentInParent<Rigidbody>();
+        pm = GetComponentInParent<PlayerMovement>();
+        pm.canMove = true;
+        Scope = GetComponentInChildren<Camera>();
     }
 
     // Disparo primario del Sniper Rifle
@@ -40,6 +45,18 @@ public class SniperRifle : Weapon {
         }
     }
 
+    public override void SecondaryFire()
+    {
+        if(Scope.enabled == false)
+        {
+            Scope.enabled = true;
+        }
+        else
+        {
+            Scope.enabled = false;
+        }
+    }
+
     // Aplica el efecto de disparo del Sniper Rifle
     public void SniperFire(Vector3 hitPoint)
     {
@@ -51,7 +68,8 @@ public class SniperRifle : Weapon {
                 shootTime = Time.time;
                 FireBullet(hitPoint);
                 rb.transform.Translate(0, 0, -recoil*Time.deltaTime);
-                rb.transform.Rotate(-recoil, 0, 0);
+                playerCamera.transform.Rotate(-recoil/2, 0, 0);
+                pm.canMove = false;
                 Invoke("ReturnPlayerPosition", 0.4f);
             }
         }
@@ -59,6 +77,7 @@ public class SniperRifle : Weapon {
 
     public void ReturnPlayerPosition()
     {
-        rb.transform.Rotate(recoil,0,0);
+        pm.canMove = true;
+        playerCamera.transform.Rotate(recoil,0,0);
     }
 }

@@ -11,18 +11,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d6e25434dc44084a86c2de4683bdac8, type: 3}
   m_Name: New Class_Data
   m_EditorClassIdentifier: 
-  assaultHp: 0
-  assaultSpeed: 0
-  assaultArmor: 0
-  assaultJump: 0
-  assaultWeapons: []
-  assaultSkills: []
-  snipertHp: 0
-  sniperSpeed: 0
-  snipertArmor: 0
-  sniperJump: 0
-  sniperWeapons: []
-  sniperSkills: []
+  assaultHp: 100
+  assaultSpeed: 15
+  assaultArmor: 20
+  assaultJump: 15
+  assaultWeapons:
+  - {fileID: 114983907251982100, guid: 9e62efbebc9841040ba8787f415b23e0, type: 2}
+  assaultSkills:
+  - {fileID: 114503651411733074, guid: 8684f3a6ad2f09349bfde6761dfbb1f2, type: 2}
+  - {fileID: 114635719622230130, guid: 86b7f5edb9ee62948aa5dbd7e71cde31, type: 2}
+  snipertHp: 100
+  sniperSpeed: 20
+  snipertArmor: 10
+  sniperJump: 15
+  sniperWeapons:
+  - {fileID: 114508933456170358, guid: 9b19086843672de4685be18e5429fae8, type: 2}
+  sniperSkills:
+  - {fileID: 114503651411733074, guid: 8684f3a6ad2f09349bfde6761dfbb1f2, type: 2}
+  - {fileID: 114635719622230130, guid: 86b7f5edb9ee62948aa5dbd7e71cde31, type: 2}
   supportHp: 0
   supportSpeed: 0
   supportArmor: 0
@@ -35,3 +41,6 @@ MonoBehaviour:
   engineerJump: 0
   engineerWeapons: []
   engineerSkills: []
+  gravityForce: 20
+  camerdaSpeed: 50
+  cameraRotationY: 80

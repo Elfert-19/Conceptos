@@ -14,6 +14,7 @@ public class PlayerMovement : UnityEngine.MonoBehaviour {
     Camera cameraPlayer;
     float currentGravity;
     public bool groundMode;
+    public bool canMove;
 
     private void Awake()
     {
@@ -39,49 +40,52 @@ public class PlayerMovement : UnityEngine.MonoBehaviour {
     // Movimiento de la camara del jugador
     void HeadMovement()
     {
-        float rotX = Input.GetAxis("Mouse X") * camerdaSpeed * Time.deltaTime;
-        transform.Rotate(0, rotX, 0);
+        if (canMove == true) {
+            float rotX = Input.GetAxis("Mouse X") * camerdaSpeed * Time.deltaTime;
+            transform.Rotate(0, rotX, 0);
 
-        float ejeY = Input.GetAxis("Mouse Y") * -camerdaSpeed * Time.deltaTime;
-        cameraAngle += ejeY;
-        cameraAngle = Mathf.Clamp(cameraAngle, -cameraRotationY, cameraRotationY);
-        cameraPlayer.transform.localEulerAngles = new Vector3(cameraAngle, 0, 0);
+            float ejeY = Input.GetAxis("Mouse Y") * -camerdaSpeed * Time.deltaTime;
+            cameraAngle += ejeY;
+            cameraAngle = Mathf.Clamp(cameraAngle, -cameraRotationY, cameraRotationY);
+            cameraPlayer.transform.localEulerAngles = new Vector3(cameraAngle, 0, 0);
+        }
     }
 
     // Se encarga del movimiento en tierra del jugador
     void GroundMovement()
     {
         Vector3 movement = new Vector3(0,-currentGravity, 0);
-        if (Input.GetKey(KeyCode.W))
+        if (canMove)
         {
-            movement += transform.forward * speed;
+            if (Input.GetKey(KeyCode.W))
+            {
+                movement += transform.forward * speed;
+            }
+            if (Input.GetKey(KeyCode.S))
+            {
+                movement += -transform.forward * speed;
+            }
+            if (Input.GetKey(KeyCode.D))
+            {
+                movement += transform.right * speed;
+            }
+            if (Input.GetKey(KeyCode.A))
+            {
+                movement += -transform.right * speed;
+            }
+            if (charC.isGrounded)
+            {
+                if (Input.GetKey(KeyCode.Space))
+                {
+                    currentGravity = -jump;
+                }
+                else
+                {
+                    currentGravity = 0;
+                }
+            }
         }
-        if (Input.GetKey(KeyCode.S))
-        {
-            movement += -transform.forward * speed;
-        }
-        if (Input.GetKey(KeyCode.D))
-        {
-            movement += transform.right * speed;
-        }
-        if (Input.GetKey(KeyCode.A))
-        {
-            movement += -transform.right * speed;
-        }
-
         charC.Move(movement * Time.deltaTime);
-
-        if (charC.isGrounded)
-        {
-            if (Input.GetKey(KeyCode.Space))
-            {
-                currentGravity = -jump;
-            }
-            else
-            {
-                currentGravity = 0;
-            }
-        }
     }
 
     // Se encarga de la gravedad que aplica sobre el pesonaje

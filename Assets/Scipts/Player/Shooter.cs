@@ -39,7 +39,7 @@ public class Shooter : UnityEngine.MonoBehaviour {
         {
             primaryFire = Input.GetKeyDown(KeyCode.Mouse0);
         }
-        bool secondaryFire = Input.GetKey(KeyCode.Mouse1);
+        bool secondaryFire = Input.GetKeyDown(KeyCode.Mouse1);
         bool specialFire = Input.GetKeyDown(KeyCode.Mouse2);
 
         if (primaryFire)
