@@ -25,7 +25,7 @@ public class Bullet : UnityEngine.MonoBehaviour {
     // Movimiento de la bala
     public virtual void BulletFly()
     {
-        transform.Translate(0, 0, speed * Time.deltaTime);
+        transform.Translate(transform.forward * speed * Time.deltaTime);
     }
     // Aplica alguna particularidad del disparo;
     public virtual void SpecialEffect()

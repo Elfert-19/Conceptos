@@ -26,6 +26,7 @@ public class SniperRifle : Weapon {
     // Disparo primario del Sniper Rifle
     public override void PrimaryFire()
     {
+        hitMiss = true;
         Vector3 miss = new Vector3(0, -200, 0);
         RaycastHit hitInfo;
         if (Physics.Raycast(playerCamera.transform.position, playerCamera.transform.forward, out hitInfo, maxDistance, layer))

@@ -14,7 +14,7 @@ public class PlayerMovement : UnityEngine.MonoBehaviour {
     Camera cameraPlayer;
     float currentGravity;
     public bool groundMode;
-    public bool canMove;
+    public bool canMove = true;
 
     private void Awake()
     {
@@ -55,7 +55,7 @@ public class PlayerMovement : UnityEngine.MonoBehaviour {
     void GroundMovement()
     {
         Vector3 movement = new Vector3(0,-currentGravity, 0);
-        if (canMove)
+        if (canMove == true)
         {
             if (Input.GetKey(KeyCode.W))
             {

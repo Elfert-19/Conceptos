@@ -339,7 +339,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 577a9668e603dec4181c6b3f84fd0f6e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bullet: {fileID: 1250927750447882, guid: 66c3c35005528f54fb4c7fc27f1d1f30, type: 2}
+  bullet: {fileID: 1125675605832466, guid: 261dab886a436e54ab7a53926c2a6af5, type: 2}
   reloadSound: {fileID: 0}
   totalAmmo: 100
   currentAmmo: 0
