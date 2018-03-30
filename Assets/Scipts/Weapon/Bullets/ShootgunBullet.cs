@@ -9,28 +9,20 @@ public class ShootgunBullet : Bullet {
     [SerializeField]
     float travelTime;
 
-    private void Update()
-    {
-        BulletFly();
-    }
-
     private void Awake()
     {
         Invoke("DeadTime", travelTime);
     }
+
 
     private void OnCollisionStay(Collision hit)
     {
         if (hit.collider.GetComponent<Rigidbody>() == true)
         {
             hitRb = hit.collider.GetComponent<Rigidbody>();
-            hitRb.AddForce(gameObject.transform.forward * impactForce, ForceMode.Impulse);
+            Vector3 direction = Vector3.Normalize(transform.position - hitRb.position);
+            hitRb.AddForce(-direction * impactForce);
         }
         ApplyDamage(hit.collider);
-    }
-    // Destruye la bala
-    private void DeadTime()
-    {
-        Destroy(gameObject.gameObject);
     }
 }

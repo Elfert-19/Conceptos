@@ -11,8 +11,10 @@ public class SniperBullet : Bullet {
         if (hit.collider.GetComponent<Rigidbody>() == true)
         {
             hitRb = hit.collider.GetComponent<Rigidbody>();
-            hitRb.AddForce(gameObject.transform.forward * impactForce, ForceMode.Impulse);
+            Vector3 direction = Vector3.Normalize(transform.position - hitRb.position);
+            hitRb.AddForce(direction * impactForce);
         }
         ApplyDamage(hit.collider);
+        Invoke("DeadTime", 1);
     }
 }

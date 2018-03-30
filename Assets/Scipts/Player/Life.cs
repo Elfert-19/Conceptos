@@ -13,6 +13,7 @@ public class Life : UnityEngine.MonoBehaviour {
     List<GameObject> onDeadGoOff;
     public bool parcialDead = false;
     List<GameObject> onParcialDeadGoOff;
+    public bool dead;
 
 
     private void Start()
@@ -62,6 +63,7 @@ public class Life : UnityEngine.MonoBehaviour {
         for (int i = 0; i < onDeadGoOff.Count; i++)
         {
             onDeadGoOff[i].SetActive(false);
+            dead = true;
         }
     }
     // Controla que el la auto curacion siga estando activa y aplica una curacion

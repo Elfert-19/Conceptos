@@ -7,6 +7,6 @@ public class SmgBullet : Bullet {
     private void OnCollisionStay(Collision hit)
     {
         ApplyDamage(hit.collider);
+        Invoke("DeadTime", 1);
     }
-
 }

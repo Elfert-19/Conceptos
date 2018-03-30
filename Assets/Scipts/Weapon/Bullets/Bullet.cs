@@ -17,10 +17,16 @@ public class Bullet : UnityEngine.MonoBehaviour {
             armor = hit.GetComponent<Armor>();
             armor.ApplyArmor(damage);
             Instantiate(bulletEfect, gameObject.transform.position, gameObject.transform.rotation);
-            Destroy(gameObject);
+            DeadTime();
         }
-            Instantiate(bulletEfect, gameObject.transform.position, gameObject.transform.rotation);
-            Destroy(gameObject.gameObject);
+
+        Instantiate(bulletEfect, gameObject.transform.position, gameObject.transform.rotation);
+        DeadTime();
+    }
+    // Destruye la bala
+    public void DeadTime()
+    {
+        Destroy(gameObject.gameObject);
     }
     // Movimiento de la bala
     public virtual void BulletFly()
@@ -36,5 +42,10 @@ public class Bullet : UnityEngine.MonoBehaviour {
     public virtual void PowerUp()
     {
 
+    }
+
+    public void OnDestroy()
+    {
+        CancelInvoke();
     }
 }

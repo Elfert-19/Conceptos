@@ -7,6 +7,11 @@ public class Armor : UnityEngine.MonoBehaviour {
     public float totalArmor;
     Life hp;
 
+    private void Awake()
+    {
+        hp = GetComponent<Life>();
+    }
+
     // Aplica un efecto de reduccion de daño en realacion a la armadura y luego se la pasa a la funcion daño del script Life
     public void ApplyArmor(float damage)
     {

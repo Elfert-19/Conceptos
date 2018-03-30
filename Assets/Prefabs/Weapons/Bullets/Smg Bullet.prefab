@@ -20,11 +20,11 @@ GameObject:
   m_Component:
   - component: {fileID: 4994361048703874}
   - component: {fileID: 136051384919835568}
-  - component: {fileID: 54330032413536884}
   - component: {fileID: 114435605048851324}
+  - component: {fileID: 54330032413536884}
   m_Layer: 14
   m_Name: Smg Bullet
-  m_TagString: Untagged
+  m_TagString: Bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -36,7 +36,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1070657883552462}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.8355999, y: 0.29324698, z: 1.3520013}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -69,8 +69,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 0
-  damage: 0
-  bulletEfect: {fileID: 0}
+  damage: 15
+  bulletEfect: {fileID: 100002, guid: 99c73c92ac40473459640b165473206f, type: 2}
   powerUpON: 0
   specialEffectOn: 0
 --- !u!136 &136051384919835568
