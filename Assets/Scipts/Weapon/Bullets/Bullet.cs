@@ -6,7 +6,7 @@ public class Bullet : UnityEngine.MonoBehaviour {
     public float speed;
     public float damage;
     Armor armor;
-    public GameObject bulletEfect;
+    public UnityEngine.GameObject bulletEfect;
     public bool powerUpON;
     public bool specialEffectOn;
 

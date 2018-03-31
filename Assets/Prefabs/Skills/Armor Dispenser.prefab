@@ -9,30 +9,30 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 1055860571045302}
+  m_RootGameObject: {fileID: 1086316479765472}
   m_IsPrefabParent: 1
---- !u!1 &1055860571045302
+--- !u!1 &1086316479765472
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 5
   m_Component:
-  - component: {fileID: 4370645938945326}
-  - component: {fileID: 114635719622230130}
+  - component: {fileID: 4775628736269692}
+  - component: {fileID: 114698705175980094}
   m_Layer: 0
-  m_Name: Speed Boost
+  m_Name: Armor Dispenser
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4370645938945326
+--- !u!4 &4775628736269692
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1055860571045302}
+  m_GameObject: {fileID: 1086316479765472}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -40,21 +40,27 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &114635719622230130
+--- !u!114 &114698705175980094
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1055860571045302}
+  m_GameObject: {fileID: 1086316479765472}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bf28f6de6d70280469fb765d71b070af, type: 3}
+  m_Script: {fileID: 11500000, guid: 20d08f8d65bfb534b9625690bd1019d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   cooldown: 10
   used: 0
   timeSinceUse: 0
   duration: 10
-  timesCanBeUsed: 0
+  timesCanBeUsed: 2
   timesUsed: 0
-  speedBoost: 10
+  pole: {fileID: 1552256338590032, guid: 4b4a1a0f2099e624ca68824e211818cb, type: 2}
+  asignedPole: {fileID: 0}
+  playerCamera: {fileID: 0}
+  maxDistance: 10
+  layer:
+    serializedVersion: 2
+    m_Bits: 4096

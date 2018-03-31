@@ -8,12 +8,14 @@ public class Shooter : UnityEngine.MonoBehaviour {
     public Transform weaponAnchor;
     Camera playerCamera;
 
+    private void Awake()
+    {
+        availableWeapons = new Weapon[3];
+    }
+
     private void Start()
     {
         playerCamera = GetComponentInChildren<Camera>();
-        foreach(Weapon weapon in availableWeapons) { 
-            weapon.gameObject.SetActive(false);
-        }
         activeWapon = availableWeapons[0];
         activeWapon.gameObject.SetActive(true);
         activeWapon.playerCamera = playerCamera;

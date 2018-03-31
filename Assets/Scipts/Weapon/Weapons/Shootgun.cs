@@ -69,11 +69,11 @@ public class Shootgun : Weapon {
 
     public override void FireBullet(Vector3 hitPoint)
     {
-        GameObject shot = Instantiate(bullet);
+        UnityEngine.GameObject shot = Instantiate(bullet);
         shot.transform.position = hitPoint;
         if (automatic)
         {
-            GameObject particle = Instantiate(shotEffect, firePoint.position, firePoint.rotation, firePoint);
+            UnityEngine.GameObject particle = Instantiate(shotEffect, firePoint.position, firePoint.rotation, firePoint);
             particle.GetComponent<ParticleDead>().automatic = true;
         }
         else

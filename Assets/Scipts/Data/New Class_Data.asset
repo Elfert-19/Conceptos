@@ -17,6 +17,8 @@ MonoBehaviour:
   assaultJump: 15
   assaultWeapons:
   - {fileID: 114983907251982100, guid: 9e62efbebc9841040ba8787f415b23e0, type: 2}
+  - {fileID: 114083200364693002, guid: d0d9e3db89e1a3945bf786753b3f547e, type: 2}
+  - {fileID: 114045525997013586, guid: 5a9362a9e4f0c8246bd87e05b609fa1e, type: 2}
   assaultSkills:
   - {fileID: 114503651411733074, guid: 8684f3a6ad2f09349bfde6761dfbb1f2, type: 2}
   - {fileID: 114635719622230130, guid: 86b7f5edb9ee62948aa5dbd7e71cde31, type: 2}
@@ -36,8 +38,8 @@ MonoBehaviour:
   supportWeapons:
   - {fileID: 114045525997013586, guid: 5a9362a9e4f0c8246bd87e05b609fa1e, type: 2}
   supportSkills:
-  - {fileID: 114503651411733074, guid: 8684f3a6ad2f09349bfde6761dfbb1f2, type: 2}
-  - {fileID: 114635719622230130, guid: 86b7f5edb9ee62948aa5dbd7e71cde31, type: 2}
+  - {fileID: 114698705175980094, guid: d152020602bbfed40bd34066e85c1353, type: 2}
+  - {fileID: 114609779513775376, guid: ba1a4959b02fc3f4d931128d2c5f6203, type: 2}
   engineertHp: 100
   engineerSpeed: 20
   engineerArmor: 20
@@ -45,7 +47,7 @@ MonoBehaviour:
   engineerWeapons:
   - {fileID: 114083200364693002, guid: d0d9e3db89e1a3945bf786753b3f547e, type: 2}
   engineerSkills:
-  - {fileID: 114503651411733074, guid: 8684f3a6ad2f09349bfde6761dfbb1f2, type: 2}
+  - {fileID: 114698705175980094, guid: d152020602bbfed40bd34066e85c1353, type: 2}
   - {fileID: 114635719622230130, guid: 86b7f5edb9ee62948aa5dbd7e71cde31, type: 2}
   gravityForce: 20
   camerdaSpeed: 50

@@ -18,6 +18,7 @@ public class PlayerClass : MonoBehaviour {
     Skill skillQ;
     Skill skillE;
     PlayerMovement playerMovement;
+    public Camera playerCamera;
     
     // Reparte los valores corriespondiente de la clase a cada componente
     private void Awake()
@@ -26,6 +27,7 @@ public class PlayerClass : MonoBehaviour {
         armor = GetComponent<Armor>();
         shooter = GetComponent<Shooter>();
         playerMovement = GetComponent<PlayerMovement>();
+        playerCamera = GetComponentInChildren<Camera>();
         PlayerJob();
         foreach(Weapon weapon in classWeapons)
         {

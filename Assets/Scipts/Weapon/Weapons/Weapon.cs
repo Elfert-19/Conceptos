@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Weapon : UnityEngine.MonoBehaviour {
-    public GameObject bullet;
+    public UnityEngine.GameObject bullet;
     public AudioClip reloadSound;
     AudioSource aSource;
     public int totalAmmo;
@@ -14,7 +14,7 @@ public class Weapon : UnityEngine.MonoBehaviour {
     public Transform firePoint;
     public float reloadSpeed;
     public Shooter shooter;
-    public GameObject shotEffect;
+    public UnityEngine.GameObject shotEffect;
     public Camera playerCamera;
     public bool automatic;
 
@@ -34,16 +34,17 @@ public class Weapon : UnityEngine.MonoBehaviour {
         }
         currentAmmo += totalAmmo;
         currentMagazine += magazine;
+        gameObject.SetActive(false);
     }
 
     // Funcion encargada de instanciar una municion en punto de disparo
     public virtual void FireBullet(Vector3 hitPoint)
     {
-        GameObject shot = Instantiate(bullet);
+        UnityEngine.GameObject shot = Instantiate(bullet);
         shot.transform.position = hitPoint;
         if (automatic)
         {
-            GameObject particle = Instantiate(shotEffect, firePoint.position, firePoint.rotation, firePoint);
+            UnityEngine.GameObject particle = Instantiate(shotEffect, firePoint.position, firePoint.rotation, firePoint);
             particle.GetComponent<ParticleDead>().automatic = true;
         }
         else

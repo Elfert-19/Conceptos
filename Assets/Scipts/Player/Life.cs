@@ -10,9 +10,9 @@ public class Life : UnityEngine.MonoBehaviour {
     public float autoHealInterval;
     [SerializeField]
     bool isPrincipalLife;
-    List<GameObject> onDeadGoOff;
+    List<UnityEngine.GameObject> onDeadGoOff;
     public bool parcialDead = false;
-    List<GameObject> onParcialDeadGoOff;
+    List<UnityEngine.GameObject> onParcialDeadGoOff;
     public bool dead;
 
 
