@@ -9,7 +9,7 @@ public class SniperRifle : Weapon {
     LayerMask layer;
     float shootTime;
     bool hitMiss = true;
-    Rigidbody rb;
+    CharacterController cc;
     PlayerMovement pm;
     public float recoil;
     Camera Scope;
@@ -17,7 +17,7 @@ public class SniperRifle : Weapon {
 
     private void Start()
     {
-        rb = GetComponentInParent<Rigidbody>();
+        cc = GetComponentInParent<CharacterController>();
         pm = GetComponentInParent<PlayerMovement>();
         pm.canMove = true;
         Scope = GetComponentInChildren<Camera>();
@@ -68,7 +68,7 @@ public class SniperRifle : Weapon {
             {
                 shootTime = Time.time;
                 FireBullet(hitPoint);
-                rb.transform.Translate(0, 0, -recoil*Time.deltaTime);
+                cc.transform.Translate(0, 0, -recoil*Time.deltaTime);
                 playerCamera.transform.Rotate(-recoil/2, 0, 0);
                 pm.canMove = false;
                 Invoke("ReturnPlayerPosition", 0.4f);

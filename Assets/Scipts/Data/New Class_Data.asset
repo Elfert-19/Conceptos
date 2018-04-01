@@ -49,6 +49,6 @@ MonoBehaviour:
   engineerSkills:
   - {fileID: 114698705175980094, guid: d152020602bbfed40bd34066e85c1353, type: 2}
   - {fileID: 114635719622230130, guid: 86b7f5edb9ee62948aa5dbd7e71cde31, type: 2}
-  gravityForce: 20
+  gravityForce: 50
   camerdaSpeed: 50
   cameraRotationY: 80
