@@ -7,13 +7,19 @@ public class Revive : Skill {
     float maxDistance;
     [SerializeField]
     LayerMask layer;
+    Camera playerCamera;
+
+    private void Awake()
+    {
+        playerCamera = GetComponentInParent<PlayerClass>().playerCamera;
+    }
 
     public override void UseSkill()
     {
         if (used == false)
         {
             RaycastHit hit;
-            if (Physics.Raycast(transform.position, transform.forward, out hit, maxDistance, layer))
+            if (Physics.Raycast(transform.position, playerCamera.transform.forward, out hit, maxDistance, layer))
             {
                 Life hitLife = hit.collider.GetComponent<Life>();
                 if (hitLife.dead == true)
@@ -21,6 +27,7 @@ public class Revive : Skill {
                     hitLife.Revive();
                     used = true;
                     SkillColdown();
+                    Debug.DrawLine(transform.position, hit.point, Color.blue);
                 }
             }
         }

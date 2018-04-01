@@ -12,7 +12,7 @@ public class SniperBullet : Bullet {
         {
             hitRb = hit.collider.GetComponent<Rigidbody>();
             Vector3 direction = Vector3.Normalize(transform.position - hitRb.position);
-            hitRb.AddForce(direction * impactForce);
+            hitRb.AddForce(-direction * impactForce);
         }
         ApplyDamage(hit.collider);
         Invoke("DeadTime", 1);

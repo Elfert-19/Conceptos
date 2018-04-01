@@ -20,7 +20,7 @@ MonoBehaviour:
   - {fileID: 114083200364693002, guid: d0d9e3db89e1a3945bf786753b3f547e, type: 2}
   - {fileID: 114045525997013586, guid: 5a9362a9e4f0c8246bd87e05b609fa1e, type: 2}
   assaultSkills:
-  - {fileID: 114503651411733074, guid: 8684f3a6ad2f09349bfde6761dfbb1f2, type: 2}
+  - {fileID: 114249859162957840, guid: f3d34951634d02049a362be60467aa1a, type: 2}
   - {fileID: 114635719622230130, guid: 86b7f5edb9ee62948aa5dbd7e71cde31, type: 2}
   snipertHp: 100
   sniperSpeed: 20
