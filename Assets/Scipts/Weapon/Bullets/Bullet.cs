@@ -14,8 +14,7 @@ public class Bullet : UnityEngine.MonoBehaviour {
     {
         if (hit.GetComponent<Armor>() != null)
         {
-            armor = hit.GetComponent<Armor>();
-            armor.ApplyArmor(damage);
+            hit.GetComponent<Armor>().ApplyArmor(damage);
             Instantiate(bulletEfect, gameObject.transform.position, gameObject.transform.rotation);
             DeadTime();
         }

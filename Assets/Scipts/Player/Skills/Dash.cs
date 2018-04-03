@@ -17,8 +17,20 @@ public class Dash : Skill {
         if (used == false)
         {
             cc.Move(transform.forward * dashForce * Time.deltaTime);
-            used = true;
-            SkillColdown();
+            timesUsed += 1;
+            if (timesUsed == timesCanBeUsed)
+            {
+                Debug.Log("ht");
+                used = true;
+                Invoke("SkillFinish", cooldown);
+            }
         }
+     
+    }
+
+    public override void SkillFinish()
+    {
+        timesUsed = 0;
+        used = false;
     }
 }

@@ -27,7 +27,7 @@ public class ArmorPoleSkill : MonoBehaviour {
         if(hit.GetComponent<Armor>() != null & hit.tag == "Player")
         {
             triggerArmor = hit.GetComponentInParent<Armor>();
-            triggerArmor.totalArmor = armorIncrement;
+            triggerArmor.extraArmor = armorIncrement;
         }
     }
 
@@ -35,7 +35,7 @@ public class ArmorPoleSkill : MonoBehaviour {
     {
         if (hit.GetComponent<Armor>() != null & hit.tag == "Player")
         {
-            triggerArmor.totalArmor = -armorIncrement;
+            triggerArmor.extraArmor = -armorIncrement;
         }
     }
 

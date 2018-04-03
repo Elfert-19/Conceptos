@@ -9,7 +9,7 @@ public class Revive : Skill {
     LayerMask layer;
     Camera playerCamera;
 
-    private void Awake()
+    private void Start()
     {
         playerCamera = GetComponentInParent<PlayerClass>().playerCamera;
     }

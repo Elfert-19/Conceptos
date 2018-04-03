@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Armor : UnityEngine.MonoBehaviour {
     public float baseArmor;
-    public float totalArmor;
+    public float extraArmor;
     Life hp;
 
     private void Awake()
@@ -15,8 +15,8 @@ public class Armor : UnityEngine.MonoBehaviour {
     // Aplica un efecto de reduccion de daño en realacion a la armadura y luego se la pasa a la funcion daño del script Life
     public void ApplyArmor(float damage)
     {
-        float filterDamage = (baseArmor*100) / (baseArmor + totalArmor);
-        float totalDamage = damage - ((damage / 100) * filterDamage);
+        float filterDamage = (damage/100)*(baseArmor+extraArmor);
+        int totalDamage = Mathf.RoundToInt(damage - filterDamage);
         hp.Damage(totalDamage);
     }
 }

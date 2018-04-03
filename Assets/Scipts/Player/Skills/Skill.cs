@@ -18,14 +18,7 @@ public class Skill : UnityEngine.MonoBehaviour {
     // Aplica el enfriamento del a abilidad
     public virtual void SkillColdown()
     {
-        if(used == true & timesCanBeUsed == 0)
-        {
-            if(timeSinceUse > cooldown)
-            {
-                used = false;
-            }
-        }
-        if(used == true & timesUsed == timesCanBeUsed)
+        if(used == true)
         {
             if(timeSinceUse > cooldown)
             {

@@ -54,7 +54,7 @@ MonoBehaviour:
   cooldown: 10
   used: 0
   timeSinceUse: 0
-  duration: 10
+  duration: 15
   timesCanBeUsed: 2
   timesUsed: 0
   pole: {fileID: 1552256338590032, guid: 4b4a1a0f2099e624ca68824e211818cb, type: 2}

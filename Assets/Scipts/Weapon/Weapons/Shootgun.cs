@@ -53,7 +53,6 @@ public class Shootgun : Weapon {
     // Disparo primario de la escopeta
     public void ShootGunFire(Vector3 hitPoint)
     {
-        float timeBetweenBullets = cadence / magazine;
         if (currentMagazine > 0)
         {
             FireBullet(hitPoint);

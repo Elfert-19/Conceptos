@@ -10,9 +10,9 @@ public class Life : UnityEngine.MonoBehaviour {
     public float autoHealInterval;
     [SerializeField]
     bool isPrincipalLife;
-    List<UnityEngine.GameObject> onDeadGoOff;
+    public List<Component> onDeadGoOff;
     public bool parcialDead = false;
-    List<UnityEngine.GameObject> onParcialDeadGoOff;
+    public List<Component> onParcialDeadGoOff;
     public bool dead;
 
 
@@ -26,16 +26,16 @@ public class Life : UnityEngine.MonoBehaviour {
     }
 
     // Se le pasa un daño y se lo resta a la vida, luego llama a la funcion de control
-    public void Damage(float dm)
+    public void Damage(int dm)
     {
-        currentHp -= dm;
+        currentHp -= Mathf.RoundToInt(dm);
         Status();
     }
 
     // Controla que la vida no sea mayor del total de vida
     public void Status()
     {
-        if (currentHp < 0)
+        if (currentHp <= 0)
         {
             if (isPrincipalLife)
             {
@@ -62,7 +62,7 @@ public class Life : UnityEngine.MonoBehaviour {
     {
         for (int i = 0; i < onDeadGoOff.Count; i++)
         {
-            onDeadGoOff[i].SetActive(false);
+            onDeadGoOff[i].gameObject.SetActive(false);
             dead = true;
         }
     }
@@ -87,7 +87,7 @@ public class Life : UnityEngine.MonoBehaviour {
         parcialDead = true;
         for (int i = 0; i < onParcialDeadGoOff.Count; i++)
         {
-            onParcialDeadGoOff[i].SetActive(false);
+            onParcialDeadGoOff[i].gameObject.SetActive(false);
         }
     }
     // Vuelve a llenar la vida si no es el cuerpo principal y reactiva las funciones del mismo
@@ -99,7 +99,7 @@ public class Life : UnityEngine.MonoBehaviour {
             Heal(totalHp);
             for (int i = 0; i < onParcialDeadGoOff.Count; i++)
             {
-                onParcialDeadGoOff[i].SetActive(true);
+                //onParcialDeadGoOff[i].SetActive(true);
             }
         }
     }

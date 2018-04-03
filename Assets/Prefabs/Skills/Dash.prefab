@@ -51,10 +51,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b012f7f04ef9a9d469764131562b0dea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cooldown: 0
+  cooldown: 5
   used: 0
   timeSinceUse: 0
   duration: 0
-  timesCanBeUsed: 0
+  timesCanBeUsed: 2
   timesUsed: 0
-  dashForce: 0
+  dashForce: 50
