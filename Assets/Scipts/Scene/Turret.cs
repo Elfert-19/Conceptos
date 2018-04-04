@@ -57,7 +57,7 @@ public class Turret : MonoBehaviour {
     {
         PerimetralCheck();
     }
-
+    // Chekea todos los enemigos del area designada y los acomoda en un array
     public void PerimetralCheck()
     {
         detections = Physics.OverlapSphere(transform.position, maxDistance, layer);
@@ -70,7 +70,7 @@ public class Turret : MonoBehaviour {
             isOn = false;
         }
     }
-
+    // Dispara al enemigo en la primera posicion del array de deteccion;
     public void FireIntruder()
     {
         RaycastHit hitInfo;
@@ -93,7 +93,7 @@ public class Turret : MonoBehaviour {
             currentObjetive += 1;
         }
     }
-
+    // Cunado finalisa el efecto de la torreta
     public void FinishTurret()
     {
         gameObject.SetActive(false);

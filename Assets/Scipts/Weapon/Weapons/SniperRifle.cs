@@ -45,7 +45,7 @@ public class SniperRifle : Weapon {
             SniperFire(miss);
         }
     }
-
+    // Accion secundaria del Sniper Riffle
     public override void SecondaryFire()
     {
         if(Scope.enabled == false)
@@ -75,7 +75,7 @@ public class SniperRifle : Weapon {
             }
         }
     }
-
+    // Vuelve a acomodar el jugar en la posicion original
     public void ReturnPlayerPosition()
     {
         pm.canMove = true;

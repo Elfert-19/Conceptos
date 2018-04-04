@@ -28,7 +28,7 @@ public class ArmorDispenser : Skill {
     {
         active = asignedPole.active;
     }
-    
+    // Dispara un rayo para acomodar el Poste de Armadura
     public override void UseSkill()
     {
         if (active == false)

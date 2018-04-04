@@ -28,7 +28,7 @@ public class TurretDispencer : Skill {
     {
         active = asignedTurret.active;
     }
-
+    // Dispara un rayo para acomodar la torreta
     public override void UseSkill()
     {
         if (active == false)

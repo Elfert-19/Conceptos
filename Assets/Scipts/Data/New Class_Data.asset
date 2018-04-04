@@ -37,6 +37,7 @@ MonoBehaviour:
   supportJump: 15
   supportWeapons:
   - {fileID: 114045525997013586, guid: 5a9362a9e4f0c8246bd87e05b609fa1e, type: 2}
+  - {fileID: 114175200834581774, guid: a5322c5b37dc3f04b8c2673770cd6e96, type: 2}
   supportSkills:
   - {fileID: 114698705175980094, guid: d152020602bbfed40bd34066e85c1353, type: 2}
   - {fileID: 114609779513775376, guid: ba1a4959b02fc3f4d931128d2c5f6203, type: 2}
