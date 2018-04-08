@@ -374,4 +374,6 @@ MonoBehaviour:
   shotEffect: {fileID: 100006, guid: c888f0c922d622147bbdbe2ca794142b, type: 2}
   playerCamera: {fileID: 0}
   automatic: 0
-  bulletsAvalides: []
+  bulletsAvalides:
+  - {fileID: 1803624414443958, guid: 4efd91841b20c7f46962505dd7ca3b62, type: 2}
+  - {fileID: 1939119874589544, guid: 73d1917d166ef2d4a8b54dbe455681d6, type: 2}

@@ -47,6 +47,7 @@ MonoBehaviour:
   engineerJump: 15
   engineerWeapons:
   - {fileID: 114083200364693002, guid: d0d9e3db89e1a3945bf786753b3f547e, type: 2}
+  - {fileID: 114070912062724528, guid: 9198169425a95a74ea2cc4dbb034063c, type: 2}
   engineerSkills:
   - {fileID: 114698705175980094, guid: d152020602bbfed40bd34066e85c1353, type: 2}
   - {fileID: 114558954181902578, guid: fe366e43cc8b36f429b3faddb62242d3, type: 2}

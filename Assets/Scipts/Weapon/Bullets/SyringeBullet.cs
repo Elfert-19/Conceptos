@@ -12,7 +12,9 @@ public class SyringeBullet : Bullet {
         {
             life = hit.collider.GetComponent<Life>();
             life.currentHp += hpRecoveryAmount;
+            ApplyDamage(hit.collider);
         }
+        ApplyDamage(hit.collider);
         Invoke("DeadTime", 1);
     }
 }

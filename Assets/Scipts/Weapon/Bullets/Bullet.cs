@@ -7,8 +7,6 @@ public class Bullet : UnityEngine.MonoBehaviour {
     public float damage;
     Armor armor;
     public UnityEngine.GameObject bulletEfect;
-    public bool powerUpON;
-    public bool specialEffectOn;
 
     public virtual void ApplyDamage(Collider hit)
     {
@@ -26,21 +24,6 @@ public class Bullet : UnityEngine.MonoBehaviour {
     public void DeadTime()
     {
         Destroy(gameObject.gameObject);
-    }
-    // Movimiento de la bala
-    public virtual void BulletFly()
-    {
-        transform.Translate(transform.forward * speed * Time.deltaTime);
-    }
-    // Aplica alguna particularidad del disparo;
-    public virtual void SpecialEffect()
-    {
-
-    }
-    // Aplica algun efecto momentaneo de las blas
-    public virtual void PowerUp()
-    {
-
     }
 
     public void OnDestroy()
