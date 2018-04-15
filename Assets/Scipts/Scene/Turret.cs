@@ -60,7 +60,7 @@ public class Turret : MonoBehaviour {
     // Chekea todos los enemigos del area designada y los acomoda en un array
     public void PerimetralCheck()
     {
-        detections = Physics.OverlapSphere(transform.position, maxDistance, layer);
+        Physics.OverlapSphereNonAlloc(transform.position, maxDistance, detections ,layer);
         if(detections.Length > 0)
         {
             isOn = true;

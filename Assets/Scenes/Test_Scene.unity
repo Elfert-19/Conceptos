@@ -315,7 +315,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c0dd6d426462ab42acbc0aa2c0381c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseArmor: 0
+  baseArmor: 5
   extraArmor: 0
 --- !u!23 &1959728580
 MeshRenderer:
@@ -440,6 +440,11 @@ Prefab:
     - target: {fileID: 1017984502513430, guid: c5cfa126972dc5446bed34f79a660097, type: 2}
       propertyPath: m_Name
       value: Collider Detector;
+      objectReference: {fileID: 0}
+    - target: {fileID: 114307837864529498, guid: c5cfa126972dc5446bed34f79a660097,
+        type: 2}
+      propertyPath: playerJob
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c5cfa126972dc5446bed34f79a660097, type: 2}
