@@ -155,7 +155,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 30
   damage: 0
-  bulletEfect: {fileID: 0}
+  bulletEfect: {fileID: 100002, guid: 99c73c92ac40473459640b165473206f, type: 2}
   speedDivisor: 2
   duration: 5
   effectArea: {fileID: 65668551042392160}

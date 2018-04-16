@@ -84,6 +84,14 @@ public class PlayerMovement : UnityEngine.MonoBehaviour {
                     currentGravity = 0;
                 }
             }
+            if (Input.GetKeyDown(KeyCode.LeftShift))
+            {
+                speed += speed / 2;
+            }
+            if (Input.GetKeyUp(KeyCode.LeftShift))
+            {
+                speed -= speed / 2;
+            }
         }
         charC.Move(movement * Time.deltaTime);
     }
