@@ -8,6 +8,7 @@ public class SectorControl : MonoBehaviour {
     public List<Transform> waypoints;
     public List<EnemyMovement> enemysDetected;
 
+    // Carga la lista con las entidades que entraron al sector;
     private void OnTriggerEnter(Collider detection)
     {
         if(detection.GetComponent<PlayerClass>() != null)
@@ -20,6 +21,7 @@ public class SectorControl : MonoBehaviour {
         }
     }
 
+    // Descarga la lista de las entidades que avandonario el sector;
     private void OnTriggerExit(Collider detection)
     {
         if(detection.GetComponent<PlayerClass>() != null)

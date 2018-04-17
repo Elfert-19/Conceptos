@@ -5,7 +5,12 @@ using UnityEngine;
 public class SniperBullet : Bullet {
     Rigidbody hitRb;
     public float impactForce;
-    
+
+    private void Start()
+    {
+        Invoke("DeadTime", 1);
+    }
+
     private void OnCollisionStay(Collision hit)
     {
         if (hit.collider.GetComponent<Rigidbody>() == true)
@@ -15,6 +20,5 @@ public class SniperBullet : Bullet {
             hitRb.AddForce(-direction * impactForce);
         }
         ApplyDamage(hit.collider);
-        Invoke("DeadTime", 1);
     }
 }

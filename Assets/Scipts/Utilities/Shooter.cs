@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Shooter : UnityEngine.MonoBehaviour {
-    Weapon activeWapon;
+    public Weapon activeWapon;
     public Weapon[] availableWeapons;
     public Transform weaponAnchor;
     Camera playerCamera;

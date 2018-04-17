@@ -9,7 +9,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1d6e25434dc44084a86c2de4683bdac8, type: 3}
-  m_Name: New Class_Data
+  m_Name: Player Class Data
   m_EditorClassIdentifier: 
   assaultHp: 100
   assaultSpeed: 15
@@ -31,7 +31,7 @@ MonoBehaviour:
   - {fileID: 114568415039810328, guid: 7d6b0cbeecc51f84592a45dfd8a4814e, type: 2}
   - {fileID: 114402624202842250, guid: 35dfef3e591bfd24c90b79b9386c0ffd, type: 2}
   sniperSkills:
-  - {fileID: 114503651411733074, guid: 8684f3a6ad2f09349bfde6761dfbb1f2, type: 2}
+  - {fileID: 114735243547470922, guid: d088455e0905c29419f54567f37059d0, type: 2}
   - {fileID: 114635719622230130, guid: 86b7f5edb9ee62948aa5dbd7e71cde31, type: 2}
   supportHp: 100
   supportSpeed: 15

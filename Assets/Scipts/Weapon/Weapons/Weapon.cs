@@ -17,6 +17,8 @@ public class Weapon : MonoBehaviour {
     public GameObject shotEffect;
     public Camera playerCamera;
     public bool automatic;
+    bool boost;
+    float damageMultiplier;
 
     protected void Awake()
     {
@@ -41,6 +43,10 @@ public class Weapon : MonoBehaviour {
     public virtual void FireBullet(Vector3 hitPoint)
     {
         GameObject shot = Instantiate(bullet);
+        if (boost == true)
+        {
+            shot.GetComponent<Bullet>().damage = shot.GetComponent<Bullet>().damage * damageMultiplier;
+        }
         shot.transform.position = hitPoint;
         if (automatic)
         {
@@ -77,9 +83,10 @@ public class Weapon : MonoBehaviour {
     }
 
     // Funcion para aplicar algun powerUp al arma
-    public virtual void PowerUp()
+    public virtual void PowerUp(bool active, float multiplier)
     {
-        
+        boost = true;
+        damageMultiplier = multiplier;
     }
 
     // Disparo primario

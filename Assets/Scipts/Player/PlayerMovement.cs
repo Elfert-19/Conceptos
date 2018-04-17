@@ -15,6 +15,7 @@ public class PlayerMovement : UnityEngine.MonoBehaviour {
     float currentGravity;
     public bool groundMode;
     public bool canMove = true;
+    public bool stunt = false;
 
     private void Awake()
     {
@@ -55,42 +56,45 @@ public class PlayerMovement : UnityEngine.MonoBehaviour {
     void GroundMovement()
     {
         Vector3 movement = new Vector3(0,-currentGravity, 0);
-        if (canMove == true)
+        if (stunt == false)
         {
-            if (Input.GetKey(KeyCode.W))
+            if (canMove == true)
             {
-                movement += transform.forward * speed;
-            }
-            if (Input.GetKey(KeyCode.S))
-            {
-                movement += -transform.forward * speed;
-            }
-            if (Input.GetKey(KeyCode.D))
-            {
-                movement += transform.right * speed;
-            }
-            if (Input.GetKey(KeyCode.A))
-            {
-                movement += -transform.right * speed;
-            }
-            if (charC.isGrounded)
-            {
-                if (Input.GetKey(KeyCode.Space))
+                if (Input.GetKey(KeyCode.W))
                 {
-                    currentGravity = -jump;
+                    movement += transform.forward * speed;
                 }
-                else
+                if (Input.GetKey(KeyCode.S))
                 {
-                    currentGravity = 0;
+                    movement += -transform.forward * speed;
                 }
-            }
-            if (Input.GetKeyDown(KeyCode.LeftShift))
-            {
-                speed += speed / 2;
-            }
-            if (Input.GetKeyUp(KeyCode.LeftShift))
-            {
-                speed -= speed / 2;
+                if (Input.GetKey(KeyCode.D))
+                {
+                    movement += transform.right * speed;
+                }
+                if (Input.GetKey(KeyCode.A))
+                {
+                    movement += -transform.right * speed;
+                }
+                if (charC.isGrounded)
+                {
+                    if (Input.GetKey(KeyCode.Space))
+                    {
+                        currentGravity = -jump;
+                    }
+                    else
+                    {
+                        currentGravity = 0;
+                    }
+                }
+                if (Input.GetKeyDown(KeyCode.LeftShift))
+                {
+                    speed += speed / 2;
+                }
+                if (Input.GetKeyUp(KeyCode.LeftShift))
+                {
+                    speed -= speed / 2;
+                }
             }
         }
         charC.Move(movement * Time.deltaTime);

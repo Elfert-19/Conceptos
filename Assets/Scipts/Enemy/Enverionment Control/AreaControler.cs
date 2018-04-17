@@ -8,6 +8,9 @@ public class AreaControler : MonoBehaviour {
     public List<Transform> areaWaypoints;
     public int areaWaypointsAmount;
     public int enemyAmount;
+    public int enemySmall;
+    public int enemyMedium;
+    public int enemmyBig;
 
     private void Awake()
     {
@@ -22,18 +25,39 @@ public class AreaControler : MonoBehaviour {
         areaWaypointsAmount = areaWaypoints.Count;
     }
 
+    // Setea la cantidad y el tipo de entidades que pueblan el area;
     public void ControlArea()
     {
         playerInArea = 0;
         enemyAmount = 0;
+        enemmyBig = 0;
+        enemyMedium = 0;
+        enemySmall = 0;
         foreach (SectorControl sector in sectors)
         {
             playerInArea += sector.playersDetected.Count;
             enemyAmount += sector.enemysDetected.Count;
+            foreach (EnemyMovement enemy in sector.enemysDetected)
+            {
+                EnemyType enemyType = enemy.GetComponent<EnemyType>();
+                if(enemyType.enemySize == EnemyType.Type.Small)
+                {
+                    enemySmall += 1;
+                }
+                if (enemyType.enemySize == EnemyType.Type.Medium)
+                {
+                    enemyMedium += 1;
+                }
+                if (enemyType.enemySize == EnemyType.Type.Big)
+                {
+                    enemmyBig += 1;
+                }
+            }
         }
     }
 
-    public bool IsDangerZone(SectorControl sector, bool danger)
+    // Devuelve un booleano si la el sector tiene un jugador;
+    public bool IsDangerZone(SectorControl sector)
     {
         if(sector.playersDetected.Count > 0)
         {

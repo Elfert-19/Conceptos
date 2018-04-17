@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Bullet : UnityEngine.MonoBehaviour {
+public class Bullet : MonoBehaviour {
     public float speed;
     public float damage;
     Armor armor;
-    public UnityEngine.GameObject bulletEfect;
+    public GameObject bulletEfect;
 
     public virtual void ApplyDamage(Collider hit)
     {
@@ -23,7 +23,7 @@ public class Bullet : UnityEngine.MonoBehaviour {
     // Destruye la bala
     public void DeadTime()
     {
-        Destroy(gameObject.gameObject);
+        Destroy(gameObject);
     }
 
     public void OnDestroy()
