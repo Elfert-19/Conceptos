@@ -5,6 +5,7 @@ using UnityEngine;
 public class Weapon : MonoBehaviour {
     public GameObject bullet;
     public AudioClip reloadSound;
+    public AudioClip fireSound;
     AudioSource aSource;
     public int totalAmmo;
     public int currentAmmo;

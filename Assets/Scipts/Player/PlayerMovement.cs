@@ -16,6 +16,7 @@ public class PlayerMovement : UnityEngine.MonoBehaviour {
     public bool groundMode;
     public bool canMove = true;
     public bool stunt = false;
+    public bool makingSound;
 
     private void Awake()
     {
@@ -55,6 +56,7 @@ public class PlayerMovement : UnityEngine.MonoBehaviour {
     // Se encarga del movimiento en tierra del jugador
     void GroundMovement()
     {
+        makingSound = false;
         Vector3 movement = new Vector3(0,-currentGravity, 0);
         if (stunt == false)
         {
@@ -63,24 +65,29 @@ public class PlayerMovement : UnityEngine.MonoBehaviour {
                 if (Input.GetKey(KeyCode.W))
                 {
                     movement += transform.forward * speed;
+                    makingSound = true;
                 }
                 if (Input.GetKey(KeyCode.S))
                 {
                     movement += -transform.forward * speed;
+                    makingSound = true;
                 }
                 if (Input.GetKey(KeyCode.D))
                 {
                     movement += transform.right * speed;
+                    makingSound = true;
                 }
                 if (Input.GetKey(KeyCode.A))
                 {
                     movement += -transform.right * speed;
+                    makingSound = true;
                 }
                 if (charC.isGrounded)
                 {
                     if (Input.GetKey(KeyCode.Space))
                     {
                         currentGravity = -jump;
+                        makingSound = true;
                     }
                     else
                     {

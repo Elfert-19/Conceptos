@@ -7,6 +7,7 @@ public class Shooter : UnityEngine.MonoBehaviour {
     public Weapon[] availableWeapons;
     public Transform weaponAnchor;
     Camera playerCamera;
+    public bool makingSound;
 
     private void Awake()
     {
@@ -31,7 +32,7 @@ public class Shooter : UnityEngine.MonoBehaviour {
     // Controla el mouse y llama al disparo del arma
     public void Shoot()
     {
-
+        makingSound = false;
         bool primaryFire;
         if (activeWapon.automatic)
         {
@@ -47,15 +48,18 @@ public class Shooter : UnityEngine.MonoBehaviour {
         if (primaryFire)
         {
             activeWapon.PrimaryFire();
+            makingSound = true;
         }
 
         if (secondaryFire)
         {
             activeWapon.SecondaryFire();
+            makingSound = true;
         }
         if (specialFire)
         {
             activeWapon.SpecialFire();
+            makingSound = true;
         }
     }
 
